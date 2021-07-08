@@ -2,6 +2,12 @@
 
 I implement a VAE, where the encoder is an LSTM network and the decoder is a convolutional network. I used MNIST dataset. MNIST is an image dataset, however you can treat each image as a sequence of rows. For instance, MNIST dataset has 28 × 28 images, which can be treated as a 28 dimensional multivariate sequence of length 28. 
 
+## How to Run
+* install version of tensorflow==1.14.0 (**strict requirement**)
+* execute "python main.py" to train model and generate 100 images from decoder after training. takes 3 min to train the model and generate images.
+* new_images.png is generated at the end of execution.
+* new_model.ckpt.meta is generated at the end of execution.
+
 ## Network Architecture
 * Implementing a single layer LSTM as the encoder of the VAE
   * See encoder() in Network class of model.py. Dense layers are used to calculate mu and sigma of latent space after LSTM layer. encoder() maps an input image to a proposed distribution over LSTM and Dense layers for that image. This distribution is called posterior in the network.
